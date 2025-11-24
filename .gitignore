@@ -1,0 +1,10 @@
+﻿################################################################################
+# This .gitignore file was automatically created by Microsoft(R) Visual Studio.
+################################################################################
+
+/pilas_y_colas/Ej02_ControlStatesInaGame/obj
+/pilas_y_colas/pilas_y_colas/bin/Debug/net8.0
+/pilas_y_colas/pilas_y_colas/obj
+/pilas_y_colas/Ej01_HistorialVentanasActivas/obj
+/pilas_y_colas/.vs
+/pilas_y_colas/Ej01_HistorialVentanasActivas/bin/Debug/net8.0
