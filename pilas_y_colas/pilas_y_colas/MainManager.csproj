@@ -10,6 +10,8 @@
   <ItemGroup>
     <ProjectReference Include="..\Ej01_HistorialVentanasActivas\Ej01_HistorialVentanasActivas.csproj" />
     <ProjectReference Include="..\Ej02_ControlStatesInaGame\Ej02_ControlStatesInaGame.csproj" />
+    <ProjectReference Include="..\Que01_ColaDeRestaurante\Que01_ColaDeRestaurante.csproj" />
+    <ProjectReference Include="..\Que02_ControlDePaquetesRecibidosEnBodega\Que02_ControlDePaquetesRecibidosEnBodega.csproj" />
   </ItemGroup>
 
 </Project>

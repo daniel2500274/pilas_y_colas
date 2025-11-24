@@ -2,13 +2,22 @@
 using Ej01_HistorialVentanasActivas.Stack;
 
 //importaciones ejercicio 002
-using Ej02_ControlStatesInaGame; 
+using Ej02_ControlStatesInaGame;
+//importaciones ejercicio 01 Ques
+using Que01_ColaDeRestaurante;
+using Que01_ColaDeRestaurante.Queues;
+//importaciones ejecicio 02 Ques
+using Que02_ControlDePaquetesRecibidosEnBodega;
+using Que02_ControlDePaquetesRecibidosEnBodega.Queues_02;
 
 Console.WriteLine("=== Menú de Ejercicios - Pilas y Colas ===\n");
 
+Console.WriteLine("        === PILAS / STACKS ===\n");
 Console.WriteLine("1. Ej01 - Historial de Ventanas Activas");
 Console.WriteLine("2. Ej02 - Control de Estados en un Juego");
-Console.WriteLine("\nSeleccione el ejercicio a ejecutar (1): ");
+Console.WriteLine("3. Qu01 - Simulacion de Cola en un Restaurante" );
+Console.WriteLine("4. Qu02 - Control de paquetes recibidos en bodega");
+Console.WriteLine("\nSeleccione el ejercicio a ejecutar: ");
 
 string? opcion = Console.ReadLine();
 
@@ -21,6 +30,14 @@ switch (opcion)
     case "2":
         Console.WriteLine("\n--- Ejecutando Ej02: Control de Estados en un Juego (Undo Moves) ---\n");
         EjecutarEj02();
+        break;
+    case "3":
+        Console.WriteLine("\n--- Ejecutando Qu01: Simulacion de Cola en un Restaurante ---\n");
+        EjecutarQ01();
+        break;
+    case "4":
+        Console.WriteLine("\n--- Ejecutando Qu02: Control de paquetes recibidos en bodega ---\n");
+        EjecutarQ02();
         break;
     default:
         Console.WriteLine("Opción no válida.");
@@ -77,4 +94,72 @@ static void EjecutarEj02()
 
         Console.WriteLine($"\nMovimientos restantes: {movimiento.Count()}\n");
     }
+}
+
+
+static void EjecutarQ01()
+{
+    LinkedQueue<Cliente> cola = new LinkedQueue<Cliente>(); 
+
+    Console.WriteLine("*******Atencion de clientes*******\n");
+
+
+    cola.Enqueue(new Cliente { NumeroOrden = 1087, NombreCliente = "Roberto Vega", TipoPedido = "Desayuno" });
+    cola.Enqueue(new Cliente { NumeroOrden = 2319, NombreCliente = "Isabel Morales", TipoPedido = "Bebida" });
+    cola.Enqueue(new Cliente { NumeroOrden = 3642, NombreCliente = "Fernando Castro", TipoPedido = "Almuerzo" });
+    cola.Enqueue(new Cliente { NumeroOrden = 4891, NombreCliente = "Patricia Ramos", TipoPedido = "Cena" });
+    cola.Enqueue(new Cliente { NumeroOrden = 5273, NombreCliente = "Andrés Ortiz", TipoPedido = "Desayuno" });
+    cola.Enqueue(new Cliente { NumeroOrden = 6558, NombreCliente = "Carmen Herrera", TipoPedido = "Postre" });
+    cola.Enqueue(new Cliente { NumeroOrden = 7124, NombreCliente = "Miguel Vargas", TipoPedido = "Bebida" });
+    cola.Enqueue(new Cliente { NumeroOrden = 8936, NombreCliente = "Elena Flores", TipoPedido = "Almuerzo" });
+    cola.Enqueue(new Cliente { NumeroOrden = 9407, NombreCliente = "Jorge Sánchez", TipoPedido = "Cena" });
+    cola.Enqueue(new Cliente { NumeroOrden = 1565, NombreCliente = "Raquel Domínguez", TipoPedido = "Desayuno" });
+    cola.Enqueue(new Cliente { NumeroOrden = 2798, NombreCliente = "Alberto Navarro", TipoPedido = "Postre" });
+    cola.Enqueue(new Cliente { NumeroOrden = 3481, NombreCliente = "Teresa Gil", TipoPedido = "Bebida" });
+    cola.Enqueue(new Cliente { NumeroOrden = 4652, NombreCliente = "Ricardo Campos", TipoPedido = "Almuerzo" });
+    cola.Enqueue(new Cliente { NumeroOrden = 5923, NombreCliente = "Beatriz Romero", TipoPedido = "Cena" });
+    cola.Enqueue(new Cliente { NumeroOrden = 6147, NombreCliente = "Javier Molina", TipoPedido = "Desayuno" });
+
+    for (int i = 1; i <= 4; i++)
+    {
+        var atendido = cola.Dequeue();
+        Console.WriteLine($"Cliente atendido #{i}: {atendido}");
+    }
+
+    Console.WriteLine($"\nSiguiente cliente en fila: {cola.Peek()}");
+    Console.WriteLine($"\nClientes restantes en cola: {cola.Count()}");
+
+}
+
+static void EjecutarQ02()
+{
+    LinkedQueue_02<Paquete> cola = new LinkedQueue_02<Paquete>();
+
+    cola.Enqueue(new Paquete { CodigoPaquete = 834, Proveedor = "Cargo Express", Peso = 25 });
+    cola.Enqueue(new Paquete { CodigoPaquete = 956, Proveedor = "TransRapid", Peso = 75 });
+    cola.Enqueue(new Paquete { CodigoPaquete = 1047, Proveedor = "Guatex", Peso = 30 });
+    cola.Enqueue(new Paquete { CodigoPaquete = 1182, Proveedor = "LogiPack", Peso = 100 });
+    cola.Enqueue(new Paquete { CodigoPaquete = 1293, Proveedor = "Cargo Express", Peso = 45 });
+    cola.Enqueue(new Paquete { CodigoPaquete = 1456, Proveedor = "Guatex", Peso = 60 });
+    cola.Enqueue(new Paquete { CodigoPaquete = 1578, Proveedor = "TransRapid", Peso = 20 });
+    cola.Enqueue(new Paquete { CodigoPaquete = 1689, Proveedor = "LogiPack", Peso = 85 });
+    cola.Enqueue(new Paquete { CodigoPaquete = 1741, Proveedor = "Cargo Express", Peso = 55 });
+    cola.Enqueue(new Paquete { CodigoPaquete = 1825, Proveedor = "Guatex", Peso = 40 });
+    cola.Enqueue(new Paquete { CodigoPaquete = 1967, Proveedor = "TransRapid", Peso = 90 });
+    cola.Enqueue(new Paquete { CodigoPaquete = 2031, Proveedor = "LogiPack", Peso = 35 });
+    cola.Enqueue(new Paquete { CodigoPaquete = 2154, Proveedor = "Cargo Express", Peso = 70 });
+    cola.Enqueue(new Paquete { CodigoPaquete = 2298, Proveedor = "Guatex", Peso = 50 });
+    cola.Enqueue(new Paquete { CodigoPaquete = 2367, Proveedor = "TransRapid", Peso = 65 });
+
+    for (int i = 1; i <= 3; i++)
+    {
+        var enviado = cola.Dequeue();
+        Console.WriteLine($"Paquete Procesado #{i}: {enviado}");
+    }
+    Console.WriteLine($"\nSiguiente paquete en fila: {cola.Peek()}");
+
+    double pesoPendiente = cola.AsEnumerable().Sum(p => p.Peso);
+
+    Console.WriteLine($"Peso total pendiente: {pesoPendiente} kg");
+
 }
