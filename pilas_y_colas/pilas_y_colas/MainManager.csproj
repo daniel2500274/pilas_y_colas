@@ -9,6 +9,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\Ej01_HistorialVentanasActivas\Ej01_HistorialVentanasActivas.csproj" />
+    <ProjectReference Include="..\Ej02_ControlStatesInaGame\Ej02_ControlStatesInaGame.csproj" />
   </ItemGroup>
 
 </Project>
