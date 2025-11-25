@@ -1,22 +1,22 @@
-﻿using Ej01_HistorialVentanasActivas;
+﻿using BQ01_BarraNavegacionEditorFotos;
+using BQ01_BarraNavegacionEditorFotos.DQ01;
+using Ej01_HistorialVentanasActivas;
 using Ej01_HistorialVentanasActivas.Stack;
-
-//importaciones ejercicio 002
 using Ej02_ControlStatesInaGame;
-//importaciones ejercicio 01 Ques
 using Que01_ColaDeRestaurante;
 using Que01_ColaDeRestaurante.Queues;
-//importaciones ejecicio 02 Ques
 using Que02_ControlDePaquetesRecibidosEnBodega;
 using Que02_ControlDePaquetesRecibidosEnBodega.Queues_02;
 
 Console.WriteLine("=== Menú de Ejercicios - Pilas y Colas ===\n");
-
 Console.WriteLine("        === PILAS / STACKS ===\n");
 Console.WriteLine("1. Ej01 - Historial de Ventanas Activas");
 Console.WriteLine("2. Ej02 - Control de Estados en un Juego");
-Console.WriteLine("3. Qu01 - Simulacion de Cola en un Restaurante" );
+Console.WriteLine("3. Qu01 - Simulacion de Cola en un Restaurante");
 Console.WriteLine("4. Qu02 - Control de paquetes recibidos en bodega");
+Console.WriteLine("5. BQ01 - Barra de Navegación de Editor de Fotos");
+Console.WriteLine("6. BQ02 - Gestión de Vehiculos en un carril reversible");
+Console.WriteLine("0. Salir");
 Console.WriteLine("\nSeleccione el ejercicio a ejecutar: ");
 
 string? opcion = Console.ReadLine();
@@ -38,6 +38,10 @@ switch (opcion)
     case "4":
         Console.WriteLine("\n--- Ejecutando Qu02: Control de paquetes recibidos en bodega ---\n");
         EjecutarQ02();
+        break;
+    case "5":
+        Console.WriteLine("\n--- Ejecutando BQ01: Barra de Navegación de Editor de Fotos ---\n");
+        EjecutarBQ01();
         break;
     default:
         Console.WriteLine("Opción no válida.");
@@ -161,5 +165,37 @@ static void EjecutarQ02()
     double pesoPendiente = cola.AsEnumerable().Sum(p => p.Peso);
 
     Console.WriteLine($"Peso total pendiente: {pesoPendiente} kg");
+
+}
+
+
+static void EjecutarBQ01()
+{
+    LinkedStackBQ01<Imagen> deque = new LinkedStackBQ01<Imagen>();
+    deque.InsertRear(new Imagen { Nombre = "Imagen6", Resolucion = "3840x2160" });
+    deque.InsertRear(new Imagen { Nombre = "Imagen7", Resolucion = "1280x720" });
+    deque.InsertRear(new Imagen { Nombre = "Imagen8", Resolucion = "2560x1440" });
+    deque.InsertRear(new Imagen { Nombre = "Imagen9", Resolucion = "1920x1080" });
+    deque.InsertRear(new Imagen { Nombre = "Imagen10", Resolucion = "3840x2160" });
+    deque.InsertRear(new Imagen { Nombre = "Imagen11", Resolucion = "1366x768" });
+    deque.InsertRear(new Imagen { Nombre = "Imagen12", Resolucion = "2560x1440" });
+    deque.InsertRear(new Imagen { Nombre = "Imagen13", Resolucion = "1920x1080" });
+    deque.InsertRear(new Imagen { Nombre = "Imagen14", Resolucion = "4096x2160" });
+    deque.InsertRear(new Imagen { Nombre = "Imagen15", Resolucion = "1280x720" });
+    deque.InsertRear(new Imagen { Nombre = "Imagen16", Resolucion = "3840x2160" });
+    deque.InsertRear(new Imagen { Nombre = "Imagen17", Resolucion = "1920x1200" });
+    deque.InsertRear(new Imagen { Nombre = "Imagen18", Resolucion = "2560x1440" });
+    deque.InsertRear(new Imagen { Nombre = "Imagen19", Resolucion = "1600x900" });
+    deque.InsertRear(new Imagen { Nombre = "Imagen20", Resolucion = "1920x1080" });
+
+
+    for (int i = 1; i <= 2; i++)
+    {
+        //Console.WriteLine($"Imagenn Eliminada: {deque.DeleteRear()}");
+        Console.WriteLine($"Imagenn Eliminada: {deque.DeleteFront()}");
+    }
+    deque.InsertFront(new Imagen { Nombre = "ImagenAgregada", Resolucion = "1920x1080" });
+
+    Console.WriteLine($"Imagen despues de los movimientos: {deque.PeakRear()}");
 
 }

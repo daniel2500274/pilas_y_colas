@@ -13,6 +13,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Que01_ColaDeRestaurante", "
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Que02_ControlDePaquetesRecibidosEnBodega", "Que02_ControlDePaquetesRecibidosEnBodega\Que02_ControlDePaquetesRecibidosEnBodega.csproj", "{052E8E42-CD27-4DCE-9539-4D6F274910FA}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BQ01_BarraNavegacionEditorFotos", "BQ01_BarraNavegacionEditorFotos\BQ01_BarraNavegacionEditorFotos.csproj", "{C479EE1E-48DF-4847-AD26-CCA150911845}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -39,6 +41,10 @@ Global
 		{052E8E42-CD27-4DCE-9539-4D6F274910FA}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{052E8E42-CD27-4DCE-9539-4D6F274910FA}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{052E8E42-CD27-4DCE-9539-4D6F274910FA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C479EE1E-48DF-4847-AD26-CCA150911845}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C479EE1E-48DF-4847-AD26-CCA150911845}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C479EE1E-48DF-4847-AD26-CCA150911845}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C479EE1E-48DF-4847-AD26-CCA150911845}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
