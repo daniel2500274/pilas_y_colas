@@ -1,5 +1,7 @@
 ﻿using BQ01_BarraNavegacionEditorFotos;
 using BQ01_BarraNavegacionEditorFotos.DQ01;
+using BQ02_GestionVehiculosCarrilReversible;
+using BQ02_GestionVehiculosCarrilReversible.DequeBQ2;
 using Ej01_HistorialVentanasActivas;
 using Ej01_HistorialVentanasActivas.Stack;
 using Ej02_ControlStatesInaGame;
@@ -42,6 +44,10 @@ switch (opcion)
     case "5":
         Console.WriteLine("\n--- Ejecutando BQ01: Barra de Navegación de Editor de Fotos ---\n");
         EjecutarBQ01();
+        break;
+    case "6":
+        Console.WriteLine("\n--- Ejecutando BQ01: Barra de Navegación de Editor de Fotos ---\n");
+        EjecutarBQ02();
         break;
     default:
         Console.WriteLine("Opción no válida.");
@@ -197,5 +203,40 @@ static void EjecutarBQ01()
     deque.InsertFront(new Imagen { Nombre = "ImagenAgregada", Resolucion = "1920x1080" });
 
     Console.WriteLine($"Imagen despues de los movimientos: {deque.PeakRear()}");
+
+}
+
+
+
+static void EjecutarBQ02()
+{
+    LinkedDequeBQ2<Vehiculo> vehiculos = new LinkedDequeBQ2<Vehiculo>();
+
+    vehiculos.InsertRear(new Vehiculo { Placa = "ABC123", tipo = "Carro" });
+    vehiculos.InsertFront(new Vehiculo { Placa = "XYZ789", tipo = "Moto" });
+    vehiculos.InsertFront(new Vehiculo { Placa = "LMN456", tipo = "Camión" });
+    vehiculos.InsertRear(new Vehiculo { Placa = "DEF321", tipo = "Bus" });
+    vehiculos.InsertFront(new Vehiculo { Placa = "GHI654", tipo = "Bicicleta" });
+
+    for (int i = 1; i <= 3; i++)
+    {
+        var salida = vehiculos.DeleteFront();
+        Console.WriteLine($"\nVehículo salido #{i}: {salida}");
+    }
+
+    vehiculos.InsertRear(new Vehiculo { Placa = "JKL987", tipo = "Tren" });
+    vehiculos.InsertRear(new Vehiculo { Placa = "MNO654", tipo = "Camioneta" });
+
+    Console.WriteLine("\nEstado final de los vehiculos:");
+    MostrarEstado(vehiculos);
+
+    static void MostrarEstado(LinkedDequeBQ2<Vehiculo> deque)
+    {
+        int i = 1;
+        foreach (var v in deque.AsEnumerable())
+        {
+            Console.WriteLine($"{i++}. {v}");
+        }
+    }
 
 }

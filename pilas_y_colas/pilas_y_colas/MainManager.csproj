@@ -9,6 +9,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\BQ01_BarraNavegacionEditorFotos\BQ01_BarraNavegacionEditorFotos.csproj" />
+    <ProjectReference Include="..\BQ02_GestionVehiculosCarrilReversible\BQ02_GestionVehiculosCarrilReversible.csproj" />
     <ProjectReference Include="..\Ej01_HistorialVentanasActivas\Ej01_HistorialVentanasActivas.csproj" />
     <ProjectReference Include="..\Ej02_ControlStatesInaGame\Ej02_ControlStatesInaGame.csproj" />
     <ProjectReference Include="..\Que01_ColaDeRestaurante\Que01_ColaDeRestaurante.csproj" />
